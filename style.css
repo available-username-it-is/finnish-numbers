@@ -164,7 +164,7 @@ input {
     font-weight: 500;
     padding: 0.9em 0.15em;
     text-align: center;
-    margin-top: 4em;
+    margin-top: 2em;
     margin-bottom: 2em;
 }
 
@@ -226,10 +226,9 @@ button:hover {
 
 .text-container {
     width: 100%;
-    display: flex;
     justify-content: center;
     margin-top: 1em;
-    /* display: none; */
+    display: none;
 }
 
 #audio-text {

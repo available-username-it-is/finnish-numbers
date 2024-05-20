@@ -7,7 +7,7 @@ const audios = [
     },
     { 
         name: "2.mp3",
-        number: [ ],
+        number: [1794],
         text: "Vuonna 1794...",
         source: "Lyhyt historia lähes kaikesta, Bill Bryson"
     },
@@ -45,6 +45,7 @@ const leftArrowDOM = document.querySelector("#left-arrow");
 const rightArrowDOM = document.querySelector("#right-arrow");
 const sourceDOM = document.querySelector("#source");
 const playAudioDOM = document.querySelector("#play-audio");
+const cardDOM = document.querySelector(".card-container");
 
 const createResources = (difficulty) => {
     if (difficulty === "beginner") {
@@ -58,6 +59,8 @@ const fillPage = (audioObj) => {
     audioDOM.src = "assets/audio/" + audioObj.name;
     audioTextDOM.innerHTML = audioObj.text;
     sourceDOM.innerHTML = audioObj.source;
+    audioTextDOM.parentElement.style.display = "none";
+    numberInputDOM.value = "";
 }
 
 const startPage = (audioObj) => {
@@ -88,4 +91,20 @@ leftArrowDOM.addEventListener("click", () => {
     startPage(resources[resourceNumber]);
 })
 
+revealTextDOM.addEventListener("click", () => {
+    audioTextDOM.parentElement.style.display = "flex";
+});
+
 startPage(resources[resourceNumber]);
+
+if (difficulty === "beginner") {
+    submitButtonDOM.addEventListener("click", () => {
+        if (+numberInputDOM.value === resources[resourceNumber].number[0]) {
+            audioTextDOM.parentElement.style.display = "flex";
+            // numberInputDOM.style.border = "2px solid #28a745";
+            cardDOM.style.backgroundColor = "#28a74547";
+        } else {
+            cardDOM.style.backgroundColor = "#dc354547";
+        }
+    });
+}
