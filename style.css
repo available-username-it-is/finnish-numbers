@@ -92,18 +92,13 @@
 
 /* Styles for footer */
 footer {
-    background-color: #f8f9fa;
     padding: 20px 0;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
 }
 
-footer p {
+/* footer p {
     font-size: 14px;
-}
+} */
 
 /* Test styles */
 
@@ -111,6 +106,7 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* position: relative; */
 }
 
 .main-container {
@@ -204,6 +200,7 @@ button:hover {
 
 .arrow-button {
     margin-top: 2em;
+    /* position: absolute; */
 }
 
 .arrow-button img {
@@ -216,14 +213,34 @@ button:hover {
     cursor: pointer;
 }
 
-.flipped {
+.arrow-button .flipped {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     margin-right: 3em;
+    margin-left: 0; 
 }
 
 .arrow-button img:hover {
     background-color: #ebebeb;
+}
+
+.text-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    /* display: none; */
+}
+
+#audio-text {
+    color: black;
+    cursor: text;
+    max-width: 300px;
+    text-align: center;
+}
+
+#audio-text:hover {
+    text-decoration: none;
 }
 
 /* Responsive Styles */
@@ -236,5 +253,15 @@ button:hover {
     .btn {
         width: 100%;
         max-width: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+    .arrow-button {
+        display: none;
+    }
+
+    .main-container {
+        width: 100%;
     }
 }

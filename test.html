@@ -13,7 +13,7 @@
 <body>
     <main>
         <section class="center-section">
-            <div class="arrow-button">
+            <div class="arrow-button" id="left-arrow">
                 <img src="assets/images/arrow.png" class="flipped">
             </div>
             <div class="main-container">
@@ -27,20 +27,29 @@
                 <div class="card-container">
                     <h1>Input the number you've heard</h1>
 
-                    <div class="image-container">
+                    <div class="image-container" id="play-audio">
                         <img src="assets/images/volume.png">
                     </div>
-
-                    <input type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" placeholder="Number you've heard">
+                    <audio src="" id="audio"></audio>
+                    <div class="text-container">
+                        <p id="audio-text"></p>
+                    </div>
+                    <input type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" placeholder="Number you've heard" id="number-input">
                     <br>
-                    <button>Submit</button>
-                    <p>Reveal text</p>
+                    <button id="submit-button">Submit</button>
+                    <p id="reveal-text">Reveal text</p>
                 </div>
             </div>
-            <div class="arrow-button">
+            <div class="arrow-button" id="right-arrow">
                 <img src="assets/images/arrow.png">
             </div>
         </section>
+
+        <footer>
+            <p id="source"></p>
+        </footer>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
