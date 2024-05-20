@@ -23,6 +23,66 @@ const audios = [
         text: "Parkinson hoiti museota vuoteen 1805...",
         source: "Lyhyt historia lähes kaikesta, Bill Bryson"
     },
+    { 
+        name: "5.mp3",
+        number: [65000000],
+        text: "Noin 65 miljoonaa vuotta kestänyttä kautta...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "6.mp3",
+        number: [1715],
+        text: "Ehdottamalla vuonna 1715...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "7.mp3",
+        number: [168000],
+        text: "168 000 vuotta...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "8.mp3",
+        number: [306662400],
+        text: "306 662 400 vuotta...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "9.mp3",
+        number: [22],
+        text: "22-vuotiaana hän palasi Glasgow’hun...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "10.mp3",
+        number: [53],
+        text: "53 vuotta...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "11.mp3",
+        number: [83],
+        text: "Hän kuoli vasta 83-vuotiaana...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "12.mp3",
+        number: [1907],
+        text: "Vuonna 1907...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "13.mp3",
+        number: [661],
+        text: "Hän kirjoitti 661 artikkelia...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
+    { 
+        name: "14.mp3",
+        number: [69],
+        text: "Sai 69 patenttia...",
+        source: "Lyhyt historia lähes kaikesta, Bill Bryson"
+    },
 ];
 
 const shuffle = (array) => {
@@ -61,6 +121,7 @@ const fillPage = (audioObj) => {
     sourceDOM.innerHTML = audioObj.source;
     audioTextDOM.parentElement.style.display = "none";
     numberInputDOM.value = "";
+    cardDOM.style.backgroundColor = "#F8F9FA";
 }
 
 const startPage = (audioObj) => {
