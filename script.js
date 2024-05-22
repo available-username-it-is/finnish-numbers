@@ -126,7 +126,7 @@ const fillPage = (audioObj) => {
 
 const startPage = (audioObj) => {
     fillPage(audioObj);
-    audioDOM.play();
+    setTimeout(() => audioDOM.play(), 700);
 }
 
 const resources = createResources(difficulty);
@@ -136,20 +136,45 @@ playAudioDOM.addEventListener("click", () => {
     audioDOM.play();
 });
 
+function slideAnimation(container, outClass, inClass, callback) {
+    container.classList.add(outClass);
+    
+    container.addEventListener('animationend', function() {
+        container.classList.remove(outClass);
+        
+        if (callback) {
+            callback();
+        }
+        
+        container.classList.add(inClass);
+        
+        container.addEventListener('animationend', function() {
+            container.classList.remove(inClass);
+        }, { once: true });
+    }, { once: true });
+}
+
 rightArrowDOM.addEventListener("click", () => {
-    resourceNumber++;
-    if (!resources[resourceNumber]) {
-        resourceNumber = 0;
-    }
-    startPage(resources[resourceNumber]);
+    const questionContainer = document.getElementById('question-container');
+
+    slideAnimation(questionContainer, 'slide-out', 'slide-in', function() {
+        resourceNumber++;
+        if (!resources[resourceNumber]) {
+            resourceNumber = 0;
+        }
+        startPage(resources[resourceNumber]);
+    });
 });
 
 leftArrowDOM.addEventListener("click", () => {
-    resourceNumber--;
-    if (!resources[resourceNumber]) {
-        resourceNumber = resources.length - 1;
-    }
-    startPage(resources[resourceNumber]);
+    const questionContainer = document.getElementById('question-container');
+    slideAnimation(questionContainer, 'slide-out-reverse', 'slide-in-reverse', function() {
+        resourceNumber--;
+        if (!resources[resourceNumber]) {
+            resourceNumber = resources.length - 1;
+        }
+        startPage(resources[resourceNumber]);
+    });
 })
 
 revealTextDOM.addEventListener("click", () => {
