@@ -154,9 +154,75 @@ function slideAnimation(container, outClass, inClass, callback) {
     }, { once: true });
 }
 
-rightArrowDOM.addEventListener("click", () => {
+function isMobile() {
+    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+}
+
+
+
+
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleGesture() {
     const questionContainer = document.getElementById('question-container');
 
+    if (touchEndX < touchStartX) {
+        // Swipe left (next question)
+        slideAnimation(questionContainer, 'slide-out', 'slide-in', function() {
+            resourceNumber++;
+            if (!resources[resourceNumber]) {
+                resourceNumber = 0;
+            }
+            startPage(resources[resourceNumber]);
+        });
+    }
+    
+    if (touchEndX > touchStartX) {
+        // Swipe right (previous question)
+        slideAnimation(questionContainer, 'slide-out-reverse', 'slide-in-reverse', function() {
+            resourceNumber--;
+            if (!resources[resourceNumber]) {
+                resourceNumber = resources.length - 1;
+            }
+            startPage(resources[resourceNumber]);
+        });
+    }
+}
+
+document.addEventListener('touchstart', function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener('touchend', function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleGesture();
+}, false);
+
+
+
+
+
+
+// cardDOM.addEventListener("swipe", (event) => {
+//     if (event.deltaX > event.deltaY) {
+//         const questionContainer = document.getElementById('question-container');
+    
+//         slideAnimation(questionContainer, 'slide-out', 'slide-in', function() {
+//             resourceNumber++;
+//             if (!resources[resourceNumber]) {
+//                 resourceNumber = 0;
+//             }
+//             startPage(resources[resourceNumber]);
+//         });
+//     }
+// });
+
+rightArrowDOM.addEventListener("click", () => {
+    const questionContainer = document.getElementById('question-container');
+    
     slideAnimation(questionContainer, 'slide-out', 'slide-in', function() {
         resourceNumber++;
         if (!resources[resourceNumber]) {
