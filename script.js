@@ -83,6 +83,78 @@ const audios = [
         text: "Sai 69 patenttia...",
         source: "Lyhyt historia lähes kaikesta, Bill Bryson"
     },
+    { 
+        name: "15.mp3",
+        number: [1876],
+        text: "1876...",
+        source: "Satusetä"
+    },
+    { 
+        name: "16.mp3",
+        number: [1988],
+        text: "1988...",
+        source: "Satusetä"
+    },
+    { 
+        name: "17.mp3",
+        number: [1950],
+        text: "1950...",
+        source: "Satusetä"
+    },
+    { 
+        name: "18.mp3",
+        number: [1903],
+        text: "1903...",
+        source: "Satusetä"
+    },
+    { 
+        name: "19.mp3",
+        number: [1775],
+        text: "1775...",
+        source: "Satusetä"
+    },
+    { 
+        name: "20.mp3",
+        number: [60],
+        text: "60...",
+        source: "Satusetä"
+    },
+    { 
+        name: "21.mp3",
+        number: [360],
+        text: "360...",
+        source: "Satusetä"
+    },
+    { 
+        name: "22.mp3",
+        number: [31],
+        text: "31...",
+        source: "Satusetä"
+    },
+    { 
+        name: "23.mp3",
+        number: [4000],
+        text: "4000...",
+        source: "Satusetä"
+    },
+    { 
+        name: "24.mp3",
+        number: [36000],
+        text: "36000...",
+        source: "Satusetä"
+    },
+    { 
+        name: "25.mp3",
+        number: [1800],
+        text: "1800...",
+        source: "Satusetä"
+    },
+    { 
+        name: "26.mp3",
+        number: [4500],
+        text: "4500...",
+        source: "Satusetä"
+    },
 ];
 
 const shuffle = (array) => {
