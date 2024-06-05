@@ -63,6 +63,10 @@
     transform: translateY(-2px);
 }
 
+.btn-disabled {
+    background-color: gray;
+}
+
 /* Beginner button */
 .btn-beginner {
     background-color: #28a745;
